@@ -10,16 +10,19 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Center(
-                child: Text(
-                  'KWYE',
-                  style: TextStyle(fontSize: 20),
-                ),
-              )
-            ],
+          child: Container(
+            padding: EdgeInsets.all(10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Center(
+                  child: Text(
+                    'KW',
+                    style: TextStyle(fontSize: 40),
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),
