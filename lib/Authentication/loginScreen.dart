@@ -12,6 +12,7 @@ class LoginScreen extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Container(
           height: size.height, // Set the container height to full screen height
@@ -39,7 +40,7 @@ class LoginScreen extends StatelessWidget {
                     children: [
                       TextFormField(
                         decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.fingerprint),
+                          prefixIcon: Icon(Icons.person),
                           labelText: 'Email',
                           hintText: 'Email',
                           border: OutlineInputBorder(
@@ -54,10 +55,6 @@ class LoginScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20),
                             borderSide:
                                 BorderSide(color: Colors.grey, width: 1.8),
-                          ),
-                          suffixIcon: IconButton(
-                            onPressed: null,
-                            icon: Icon(Icons.remove_red_eye_outlined),
                           ),
                         ),
                       ),
@@ -83,6 +80,39 @@ class LoginScreen extends StatelessWidget {
                           suffixIcon: IconButton(
                             onPressed: null,
                             icon: Icon(Icons.remove_red_eye_outlined),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: size.height * 0.05),
+
+                      // LOGIN BUTTON
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          height: 60,
+                          width: 200,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.grey.shade500,
+                                  offset: const Offset(4.0, 4.0),
+                                  blurRadius: 15,
+                                  spreadRadius: 1.0),
+                              const BoxShadow(
+                                  color: Colors.white,
+                                  offset: Offset(-4.0, -4.0),
+                                  blurRadius: 15,
+                                  spreadRadius: 1.0),
+                            ],
+                          ),
+                          child: Center(
+                            child: Text(
+                              'LOGIN',
+                              style: GoogleFonts.poppins(
+                                  fontSize: 25, fontWeight: FontWeight.w500),
+                            ),
                           ),
                         ),
                       ),
