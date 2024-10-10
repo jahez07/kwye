@@ -23,16 +23,72 @@ class LoginScreen extends StatelessWidget {
               children: [
                 Text(
                   'KWYE',
-                  style: GoogleFonts.inter(
-                      fontSize: 60, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 60, fontWeight: FontWeight.bold),
                 ),
                 Text(
                   'know what you eat',
-                  style: GoogleFonts.inter(
+                  style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w300,
                       color: Colors.grey),
                 ),
+                SizedBox(height: size.height * 0.08),
+                Container(
+                  padding: EdgeInsets.only(right: 10, left: 10),
+                  child: Column(
+                    children: [
+                      TextFormField(
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.fingerprint),
+                          labelText: 'Email',
+                          hintText: 'Email',
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide:
+                                BorderSide(color: Colors.black, width: 1),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide:
+                                BorderSide(color: Colors.grey, width: 1.8),
+                          ),
+                          suffixIcon: IconButton(
+                            onPressed: null,
+                            icon: Icon(Icons.remove_red_eye_outlined),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: size.height * 0.02),
+                      TextFormField(
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.fingerprint),
+                          labelText: 'Password',
+                          hintText: 'Password',
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide:
+                                BorderSide(color: Colors.black, width: 1),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide:
+                                BorderSide(color: Colors.grey, width: 1.8),
+                          ),
+                          suffixIcon: IconButton(
+                            onPressed: null,
+                            icon: Icon(Icons.remove_red_eye_outlined),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                )
               ],
             ),
           ),
