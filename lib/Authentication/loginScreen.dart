@@ -23,12 +23,12 @@ class LoginScreen extends StatelessWidget {
               children: [
                 Text(
                   'KWYE',
-                  style: GoogleFonts.poppins(
+                  style: GoogleFonts.inter(
                       fontSize: 60, fontWeight: FontWeight.bold),
                 ),
                 Text(
                   'know what you eat',
-                  style: GoogleFonts.poppins(
+                  style: GoogleFonts.inter(
                       fontSize: 20,
                       fontWeight: FontWeight.w300,
                       color: Colors.grey),
