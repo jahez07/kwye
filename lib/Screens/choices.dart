@@ -15,26 +15,44 @@ class ChoicesScreen extends StatelessWidget {
         ),
       ),
       backgroundColor: Colors.white,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            padding: const EdgeInsets.all(15),
-            decoration: BoxDecoration(
-              color: Colors.grey.shade100,
-              borderRadius: BorderRadius.circular(15),
-              border: Border.all(width: 1, color: Colors.grey.shade300),
+      body: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            GestureDetector(
+              onTap: () {},
+              child: Container(
+                padding: const EdgeInsets.all(15),
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade100,
+                  borderRadius: BorderRadius.circular(15),
+                  border: Border.all(width: 1, color: Colors.grey.shade300),
+                ),
+                child: const Text(
+                  'Packed Food',
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
             ),
-            child: const Text(
-              'Barcode Scanner',
-              style: TextStyle(fontSize: 20),
+            const SizedBox(
+              width: 10,
             ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Container(),
-        ],
+            GestureDetector(
+              child: Container(
+                padding: const EdgeInsets.all(15),
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade100,
+                  borderRadius: BorderRadius.circular(15),
+                  border: Border.all(width: 1, color: Colors.grey.shade300),
+                ),
+                child: const Text(
+                  'Cooked Food',
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
