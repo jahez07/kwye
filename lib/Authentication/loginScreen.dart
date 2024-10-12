@@ -92,9 +92,10 @@ class LoginScreen extends StatelessWidget {
                           height: 60,
                           width: 200,
                           decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20),
+                              border:
+                                  Border.all(width: 1, color: Colors.black)),
                           child: Center(
                             child: Text(
                               'LOGIN',
