@@ -8,7 +8,7 @@ class ChoicesScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text(
+        title: const Text(
           'Choices',
           style: TextStyle(
               color: Colors.white, fontSize: 25, fontWeight: FontWeight.w400),
