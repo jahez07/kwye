@@ -49,7 +49,7 @@ class LoginScreen extends StatelessWidget {
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20),
                             borderSide:
-                                BorderSide(color: Colors.black, width: 1),
+                                BorderSide(color: Colors.grey, width: 1),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20),
@@ -70,7 +70,7 @@ class LoginScreen extends StatelessWidget {
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20),
                             borderSide:
-                                BorderSide(color: Colors.black, width: 1),
+                                BorderSide(color: Colors.grey, width: 1),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20),
@@ -90,12 +90,11 @@ class LoginScreen extends StatelessWidget {
                         onTap: () {},
                         child: Container(
                           height: 60,
-                          width: 200,
+                          width: 150,
                           decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(20),
-                              border:
-                                  Border.all(width: 1, color: Colors.black)),
+                              border: Border.all(width: 1, color: Colors.grey)),
                           child: Center(
                             child: Text(
                               'LOGIN',
