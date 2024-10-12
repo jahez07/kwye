@@ -94,18 +94,6 @@ class LoginScreen extends StatelessWidget {
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(20),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Colors.grey.shade500,
-                                  offset: const Offset(4.0, 4.0),
-                                  blurRadius: 15,
-                                  spreadRadius: 1.0),
-                              const BoxShadow(
-                                  color: Colors.white,
-                                  offset: Offset(-4.0, -4.0),
-                                  blurRadius: 15,
-                                  spreadRadius: 1.0),
-                            ],
                           ),
                           child: Center(
                             child: Text(
