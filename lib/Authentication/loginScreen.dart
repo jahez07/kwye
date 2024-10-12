@@ -1,7 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kwye/Screens/choices.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -87,7 +90,7 @@ class LoginScreen extends StatelessWidget {
 
                       // LOGIN BUTTON
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () => Get.to(() => const ChoicesScreen()),
                         child: Container(
                           height: 60,
                           width: 150,
