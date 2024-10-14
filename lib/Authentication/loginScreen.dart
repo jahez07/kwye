@@ -22,20 +22,25 @@ class LoginScreen extends StatelessWidget {
           child: Center(
             // Wrap the Column with Center
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text(
-                  'KWYE',
-                  style: TextStyle(fontSize: 60, fontWeight: FontWeight.bold),
+                Column(
+                  children: [
+                    Text(
+                      'KWYE',
+                      style:
+                          TextStyle(fontSize: 60, fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      'know what you eat',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w300,
+                          color: Colors.grey),
+                    ),
+                  ],
                 ),
-                Text(
-                  'know what you eat',
-                  style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w300,
-                      color: Colors.grey),
-                ),
-                SizedBox(height: size.height * 0.08),
+                SizedBox(height: size.height * 0.03),
                 Container(
                   padding: EdgeInsets.only(right: 10, left: 10),
                   child: Column(
@@ -85,57 +90,47 @@ class LoginScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(height: size.height * 0.05),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          // LOGIN BUTTON
-                          GestureDetector(
-                            onTap: () => Get.to(() => const ChoicesScreen()),
-                            child: Container(
-                              height: 60,
-                              width: 150,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(20),
-                                  border:
-                                      Border.all(width: 1, color: Colors.grey)),
-                              child: Center(
-                                child: Text(
-                                  'LOGIN',
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 25,
-                                      fontWeight: FontWeight.w500),
-                                ),
-                              ),
+                      SizedBox(height: size.height * 0.04),
+
+                      // LOGIN BUTTON
+                      GestureDetector(
+                        onTap: () => Get.to(() => const ChoicesScreen()),
+                        child: Container(
+                          height: 60,
+                          width: 150,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20),
+                              border: Border.all(width: 1, color: Colors.grey)),
+                          child: Center(
+                            child: Text(
+                              'LOGIN',
+                              style: GoogleFonts.poppins(
+                                  fontSize: 25, fontWeight: FontWeight.w500),
                             ),
                           ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          // LOGIN BUTTON
-                          GestureDetector(
-                            onTap: () => Get.to(() => const ChoicesScreen()),
-                            child: Container(
-                              height: 60,
-                              width: 150,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(20),
-                                  border:
-                                      Border.all(width: 1, color: Colors.grey)),
-                              child: Center(
-                                child: Text(
-                                  'SIGNUP',
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 25,
-                                      fontWeight: FontWeight.w500),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
+                        ),
                       ),
+                      SizedBox(height: size.height * 0.03),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text.rich(
+                          TextSpan(
+                              text: 'Don\'t have an account?',
+                              style: GoogleFonts.poppins(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black),
+                              children: [
+                                TextSpan(
+                                    text: ' Sign Up',
+                                    style: GoogleFonts.poppins(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.blue))
+                              ]),
+                        ),
+                      )
                     ],
                   ),
                 )
