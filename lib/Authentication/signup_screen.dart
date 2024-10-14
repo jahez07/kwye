@@ -15,10 +15,16 @@ class SignupScreen extends StatelessWidget {
           style: TextStyle(
               color: Colors.white, fontSize: 25, fontWeight: FontWeight.w400),
         ),
-        leading: Icon(
-          Icons.arrow_back,
-          color: Colors.white,
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
         ),
+        automaticallyImplyLeading: false,
       ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
