@@ -32,113 +32,121 @@ class SignupScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
       ),
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Container(
-          padding: EdgeInsets.all(20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SizedBox(height: size.height * 0.06),
-              Form(
-                child: Container(
-                  padding: EdgeInsets.all(12),
-                  child: Column(
-                    children: [
-                      TextFormField(
-                        //controller: controller.fullName,
-                        decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.person_outline_outlined),
-                          labelText: 'Full Name',
-                          hintText: 'Name',
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                            borderSide:
-                                BorderSide(color: Colors.grey, width: 1),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                            borderSide:
-                                BorderSide(color: Colors.grey, width: 1.8),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: size.height * 0.02,
-                      ),
-                      TextFormField(
-                        //controller: controller.fullName,
-                        decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.person_outline_outlined),
-                          labelText: 'Email',
-                          hintText: 'Email ID',
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                            borderSide:
-                                BorderSide(color: Colors.grey, width: 1),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                            borderSide:
-                                BorderSide(color: Colors.grey, width: 1.8),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: size.height * 0.02,
-                      ),
-                      TextFormField(
-                        //controller: controller.fullName,
-                        decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.fingerprint_outlined),
-                          labelText: 'Password',
-                          hintText: 'Password',
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                            borderSide:
-                                BorderSide(color: Colors.grey, width: 1),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                            borderSide:
-                                BorderSide(color: Colors.grey, width: 1.8),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+      body: Center(
+        child: SingleChildScrollView(
+          child: Container(
+            padding: EdgeInsets.all(20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  "Let's get you started",
+                  style: GoogleFonts.poppins(fontSize: 20),
                 ),
-              ),
-              SizedBox(
-                height: size.height * 0.05,
-              ),
-              GestureDetector(
-                onTap: () => Get.to(() => const ChoicesScreen()),
-                child: Container(
-                  height: 60,
-                  width: 150,
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 1, color: Colors.grey)),
-                  child: Center(
-                    child: Text(
-                      'SignUp',
-                      style: GoogleFonts.poppins(
-                          fontSize: 25, fontWeight: FontWeight.w500),
+                SizedBox(
+                  height: size.height * 0.02,
+                ),
+                Form(
+                  child: Container(
+                    padding: EdgeInsets.all(12),
+                    child: Column(
+                      children: [
+                        TextFormField(
+                          //controller: controller.fullName,
+                          decoration: InputDecoration(
+                            prefixIcon: Icon(Icons.person_outline_outlined),
+                            labelText: 'Full Name',
+                            hintText: 'Name',
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20),
+                              borderSide:
+                                  BorderSide(color: Colors.grey, width: 1),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20),
+                              borderSide:
+                                  BorderSide(color: Colors.grey, width: 1.8),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: size.height * 0.02,
+                        ),
+                        TextFormField(
+                          //controller: controller.fullName,
+                          decoration: InputDecoration(
+                            prefixIcon: Icon(Icons.mail_outline),
+                            labelText: 'Email',
+                            hintText: 'Email ID',
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20),
+                              borderSide:
+                                  BorderSide(color: Colors.grey, width: 1),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20),
+                              borderSide:
+                                  BorderSide(color: Colors.grey, width: 1.8),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: size.height * 0.02,
+                        ),
+                        TextFormField(
+                          //controller: controller.fullName,
+                          decoration: InputDecoration(
+                            prefixIcon: Icon(Icons.fingerprint_outlined),
+                            labelText: 'Password',
+                            hintText: 'Password',
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20),
+                              borderSide:
+                                  BorderSide(color: Colors.grey, width: 1),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20),
+                              borderSide:
+                                  BorderSide(color: Colors.grey, width: 1.8),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
-              ),
-            ],
+                SizedBox(
+                  height: size.height * 0.05,
+                ),
+                GestureDetector(
+                  onTap: () => Get.to(() => const ChoicesScreen()),
+                  child: Container(
+                    height: 60,
+                    width: 150,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(width: 1, color: Colors.grey)),
+                    child: Center(
+                      child: Text(
+                        'SignUp',
+                        style: GoogleFonts.poppins(
+                            fontSize: 25, fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
