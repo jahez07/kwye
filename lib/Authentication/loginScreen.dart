@@ -86,25 +86,55 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: size.height * 0.05),
-
-                      // LOGIN BUTTON
-                      GestureDetector(
-                        onTap: () => Get.to(() => const ChoicesScreen()),
-                        child: Container(
-                          height: 60,
-                          width: 150,
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20),
-                              border: Border.all(width: 1, color: Colors.grey)),
-                          child: Center(
-                            child: Text(
-                              'LOGIN',
-                              style: GoogleFonts.poppins(
-                                  fontSize: 25, fontWeight: FontWeight.w500),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          // LOGIN BUTTON
+                          GestureDetector(
+                            onTap: () => Get.to(() => const ChoicesScreen()),
+                            child: Container(
+                              height: 60,
+                              width: 150,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(20),
+                                  border:
+                                      Border.all(width: 1, color: Colors.grey)),
+                              child: Center(
+                                child: Text(
+                                  'LOGIN',
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ),
                             ),
                           ),
-                        ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          // LOGIN BUTTON
+                          GestureDetector(
+                            onTap: () => Get.to(() => const ChoicesScreen()),
+                            child: Container(
+                              height: 60,
+                              width: 150,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(20),
+                                  border:
+                                      Border.all(width: 1, color: Colors.grey)),
+                              child: Center(
+                                child: Text(
+                                  'SIGNUP',
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
