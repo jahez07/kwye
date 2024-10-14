@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kwye/Authentication/signup_screen.dart';
 import 'package:kwye/Screens/choices.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -113,7 +114,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                       SizedBox(height: size.height * 0.03),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () => Get.to(() => SignupScreen()),
                         child: Text.rich(
                           TextSpan(
                               text: 'Don\'t have an account?',
