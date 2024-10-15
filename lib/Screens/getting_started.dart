@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 
 class GettingStarted extends StatelessWidget {
@@ -7,6 +9,13 @@ class GettingStarted extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(10),
+      child: Column(
+        children: [
+          Image(
+            image: AssetImage(''),
+          )
+        ],
+      ),
     );
   }
 }
