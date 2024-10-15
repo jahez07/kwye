@@ -1,16 +1,23 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, no_leading_underscores_for_local_identifiers
 
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/get_instance.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kwye/Controllers/signup_controller.dart';
 
-class SignupScreen extends StatelessWidget {
+class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
 
   @override
+  State<SignupScreen> createState() => _SignupScreenState();
+}
+
+class _SignupScreenState extends State<SignupScreen> {
+  @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    final controller = SignupController();
+    final controller = Get.put(SignupController());
     final _formKey = GlobalKey<FormState>();
     return Scaffold(
       appBar: AppBar(
