@@ -21,15 +21,9 @@ class DefaultFirebaseOptions {
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for android - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
         return macos;
       case TargetPlatform.windows:
@@ -72,4 +66,22 @@ class DefaultFirebaseOptions {
     authDomain: 'kwye-57e40.firebaseapp.com',
     storageBucket: 'kwye-57e40.appspot.com',
   );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyByHId1tojVJGUWdPQrkMqTW9xIC1xiw1I',
+    appId: '1:41362966106:ios:a730f646226126a5d8fa63',
+    messagingSenderId: '41362966106',
+    projectId: 'kwye-57e40',
+    storageBucket: 'kwye-57e40.appspot.com',
+    iosBundleId: 'com.example.kwye',
+  );
+
+  static const FirebaseOptions android = FirebaseOptions(
+    apiKey: 'AIzaSyBOjlBzddH6wP25D1JgZQ6lU_bv-SnL1co',
+    appId: '1:41362966106:android:983c1d68bc0a6693d8fa63',
+    messagingSenderId: '41362966106',
+    projectId: 'kwye-57e40',
+    storageBucket: 'kwye-57e40.appspot.com',
+  );
+
 }

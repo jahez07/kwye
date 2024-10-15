@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:kwye/Repository/Authentication/authentication_repository.dart';
 
 class SignupController extends GetxController {
   static SignupController get instance => Get.find();
@@ -12,5 +13,8 @@ class SignupController extends GetxController {
   final password = TextEditingController();
 
   // Call this function from the design to do the rest
-  void registerUser(String fullName, String email, String password) {}
+  void registerUser(String fullName, String email, String password) {
+    AuthenticationRepository.instance
+        .createUserWithEmailandPassword(email, password);
+  }
 }

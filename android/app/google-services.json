@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "41362966106",
+    "project_id": "kwye-57e40",
+    "storage_bucket": "kwye-57e40.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:41362966106:android:983c1d68bc0a6693d8fa63",
+        "android_client_info": {
+          "package_name": "com.example.kwye"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOjlBzddH6wP25D1JgZQ6lU_bv-SnL1co"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
