@@ -1,6 +1,9 @@
+// ignore_for_file: non_constant_identifier_names, unused_element
+
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:kwye/Repository/Authentication/authentication_repository.dart';
 
@@ -21,7 +24,17 @@ class _ChoicesScreenState extends State<ChoicesScreen> {
       setState(() {
         _imageFile = File(pickedFile.path);
       });
+      _processImage();
     }
+  }
+
+  Future<void> _processImage() async {
+    final input_Image = InputImage.fromFilePath(_imageFile!.path);
+    final text_Recognizer = TextRecognizer();
+    final RecognizedText recognizedText =
+        await text_Recognizer.processImage(input_Image);
+    String extractedText = recognizedText.text;
+    print(extractedText);
   }
 
   @override
@@ -45,7 +58,7 @@ class _ChoicesScreenState extends State<ChoicesScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 GestureDetector(
-                  onTap: () {},
+                  onTap: _pickImage,
                   child: Container(
                     padding: const EdgeInsets.all(15),
                     decoration: BoxDecoration(
