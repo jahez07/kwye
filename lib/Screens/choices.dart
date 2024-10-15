@@ -1,8 +1,28 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:kwye/Repository/Authentication/authentication_repository.dart';
 
-class ChoicesScreen extends StatelessWidget {
+class ChoicesScreen extends StatefulWidget {
   const ChoicesScreen({super.key});
+
+  @override
+  State<ChoicesScreen> createState() => _ChoicesScreenState();
+}
+
+class _ChoicesScreenState extends State<ChoicesScreen> {
+  File? _imageFile;
+
+  Future<void> _pickImage() async {
+    final pickedFile =
+        await ImagePicker().pickImage(source: ImageSource.gallery);
+    if (pickedFile != null) {
+      setState(() {
+        _imageFile = File(pickedFile.path);
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
