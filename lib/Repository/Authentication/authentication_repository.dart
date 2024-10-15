@@ -22,4 +22,10 @@ class AuthenticationRepository extends GetxController {
         ? Get.offAll(() => const LoginScreen())
         : Get.offAll(() => const ChoicesScreen());
   }
+
+  Future<void> createUserWithEmailandPassword(
+      String email, String password) async {
+    await _auth.createUserWithEmailAndPassword(
+        email: email, password: password);
+  }
 }
