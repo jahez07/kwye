@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:kwye/Authentication/loginScreen.dart';
+import 'package:kwye/Repository/Authentication/exception/signup_email_password_failure.dart';
 import 'package:kwye/Screens/choices.dart';
 
 class AuthenticationRepository extends GetxController {
@@ -28,8 +29,18 @@ class AuthenticationRepository extends GetxController {
     try {
       await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
+      firebaseUser.value != null
+          ? Get.offAll(() => const LoginScreen())
+          : Get.offAll(() => const ChoicesScreen());
     } on FirebaseAuthException catch (e) {
-    } catch (_) {}
+      final ex = SignupEmailPasswordFailure.code(e.code);
+      print('FIREBASE AUTH EXCEPTION -  ${ex.message}');
+      throw ex;
+    } catch (_) {
+      const ex = SignupEmailPasswordFailure();
+      print('EXCEPTION - ${ex.message}');
+      throw ex;
+    }
   }
 
   Future<void> loginUserWithEmailandPassword(
