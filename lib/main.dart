@@ -11,8 +11,11 @@ import 'package:kwye/firebase_options.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
-      .then((value) => Get.put(AuthenticationRepository()));
+  Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform).then(
+    (value) => Get.put(
+      AuthenticationRepository(),
+    ),
+  );
   runApp(const MyApp());
 }
 
