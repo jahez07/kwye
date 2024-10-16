@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:kwye/Authentication/loginScreen.dart';
 import 'package:kwye/Repository/Authentication/authentication_repository.dart';
+import 'package:kwye/Screens/getting_started.dart';
 import 'package:kwye/firebase_options.dart';
 
 void main() {
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home: GettingStarted(),
     );
   }
 }
