@@ -14,27 +14,33 @@ class GettingStarted extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Container(
         padding: const EdgeInsets.all(10),
-        child: Column(
-          children: [
-            GestureDetector(
-              onTap: () => Get.to(() => const LoginScreen()),
-              child: Container(
-                height: 60,
-                width: 150,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(width: 1, color: Colors.grey)),
-                child: Center(
-                  child: Text(
-                    'Get Started',
-                    style: GoogleFonts.poppins(
-                        fontSize: 25, fontWeight: FontWeight.w500),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              GestureDetector(
+                onTap: () => Get.to(() => const LoginScreen()),
+                child: Container(
+                  height: 60,
+                  width: 200,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(width: 1, color: Colors.grey)),
+                  child: Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'Get Started',
+                        style: GoogleFonts.poppins(
+                            fontSize: 25, fontWeight: FontWeight.w500),
+                      ),
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
