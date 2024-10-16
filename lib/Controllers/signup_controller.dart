@@ -13,8 +13,13 @@ class SignupController extends GetxController {
   final password = TextEditingController();
 
   // Call this function from the design to do the rest
-  void registerUser(String fullName, String email, String password) {
+  void registerUser(String email, String password) {
     AuthenticationRepository.instance
         .createUserWithEmailandPassword(email, password);
+  }
+
+  void loginUser(String email, String password) {
+    AuthenticationRepository.instance
+        .loginUserWithEmailandPassword(email, password);
   }
 }
