@@ -16,6 +16,7 @@ class ChoicesScreen extends StatefulWidget {
 
 class _ChoicesScreenState extends State<ChoicesScreen> {
   File? _imageFile;
+  String _extractedText = '';
 
   Future<void> _pickImage() async {
     final pickedFile =
@@ -33,8 +34,9 @@ class _ChoicesScreenState extends State<ChoicesScreen> {
     final text_Recognizer = TextRecognizer();
     final RecognizedText recognizedText =
         await text_Recognizer.processImage(input_Image);
-    String extractedText = recognizedText.text;
-    print(extractedText);
+    setState(() {
+      _extractedText = recognizedText.text;
+    });
   }
 
   @override
@@ -90,6 +92,22 @@ class _ChoicesScreenState extends State<ChoicesScreen> {
                   ),
                 ),
               ],
+            ),
+            SizedBox(
+              height: size.height * 0.02,
+            ),
+            Container(
+              width: size.width * 0.7,
+              height: size.height * 0.2,
+              decoration: BoxDecoration(
+                color: Colors.grey.shade100,
+                border: Border.all(width: 1, color: Colors.grey.shade400),
+                borderRadius: BorderRadius.circular(15),
+              ),
+              padding: const EdgeInsets.all(10),
+              child: SingleChildScrollView(
+                child: Text(_extractedText),
+              ),
             ),
             SizedBox(
               height: size.height * 0.01,
