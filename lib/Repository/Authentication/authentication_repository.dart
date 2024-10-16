@@ -20,8 +20,8 @@ class AuthenticationRepository extends GetxController {
 
   _setInitialScreen(User? user) {
     user == null
-        ? Get.offAll(() => const LoginScreen())
-        : Get.offAll(() => const ChoicesScreen());
+        ? Get.offAll(() => const ChoicesScreen())
+        : Get.offAll(() => const LoginScreen());
   }
 
   Future<void> createUserWithEmailandPassword(
