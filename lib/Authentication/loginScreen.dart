@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, no_leading_underscores_for_local_identifiers
 
 import 'package:flutter/material.dart';
 import 'package:get/get_instance/get_instance.dart';
@@ -44,7 +44,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: size.height * 0.03),
+                SizedBox(height: size.height * 0.01),
                 Form(
                   key: _formKey,
                   child: Container(
@@ -56,19 +56,21 @@ class LoginScreen extends StatelessWidget {
                           decoration: InputDecoration(
                             prefixIcon: Icon(Icons.person),
                             labelText: 'Email',
-                            hintText: 'Email',
+
+                            fillColor: Colors.grey.shade100,
+                            filled: true, // Enable filling the background
                             border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20),
+                              borderRadius: BorderRadius.circular(30),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20),
-                              borderSide:
-                                  BorderSide(color: Colors.grey, width: 1),
+                              borderRadius: BorderRadius.circular(30),
+                              borderSide: BorderSide(
+                                  color: Colors.grey.shade300, width: 1),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20),
-                              borderSide:
-                                  BorderSide(color: Colors.grey, width: 1.8),
+                              borderRadius: BorderRadius.circular(30),
+                              borderSide: BorderSide(
+                                  color: Colors.grey.shade300, width: 1.8),
                             ),
                           ),
                         ),
@@ -78,19 +80,20 @@ class LoginScreen extends StatelessWidget {
                           decoration: InputDecoration(
                             prefixIcon: Icon(Icons.fingerprint),
                             labelText: 'Password',
-                            hintText: 'Password',
+                            fillColor: Colors.grey.shade100,
+                            filled: true, // Enable filling the background
                             border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20),
+                              borderRadius: BorderRadius.circular(30),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20),
-                              borderSide:
-                                  BorderSide(color: Colors.grey, width: 1),
+                              borderRadius: BorderRadius.circular(30),
+                              borderSide: BorderSide(
+                                  color: Colors.grey.shade300, width: 1),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20),
-                              borderSide:
-                                  BorderSide(color: Colors.grey, width: 1.8),
+                              borderRadius: BorderRadius.circular(30),
+                              borderSide: BorderSide(
+                                  color: Colors.grey.shade300, width: 1.8),
                             ),
                             suffixIcon: IconButton(
                               onPressed: null,
@@ -120,7 +123,7 @@ class LoginScreen extends StatelessWidget {
                             width: 150,
                             decoration: BoxDecoration(
                                 color: Colors.white,
-                                borderRadius: BorderRadius.circular(20),
+                                borderRadius: BorderRadius.circular(30),
                                 border:
                                     Border.all(width: 1, color: Colors.grey)),
                             child: Center(
