@@ -23,10 +23,27 @@ class GettingStarted extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Knowing',
-                    style: GoogleFonts.poppins(
-                        fontSize: 60, fontWeight: FontWeight.bold),
+                  RichText(
+                    text: TextSpan(children: [
+                      TextSpan(
+                        text: 'Knowing\n',
+                        style: GoogleFonts.poppins(
+                            fontSize: 60,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black),
+                      ),
+                      WidgetSpan(
+                          child: SizedBox(
+                        height: size.height * 0,
+                      )),
+                      TextSpan(
+                        text: 'What You \nAre Eating',
+                        style: GoogleFonts.poppins(
+                            fontSize: 60,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.grey),
+                      ),
+                    ]),
                   ),
                   SizedBox(
                     height: size.height * 0.03,
