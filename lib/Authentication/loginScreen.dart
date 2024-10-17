@@ -53,6 +53,7 @@ class LoginScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         TextFormField(
+                          controller: controller.email,
                           decoration: InputDecoration(
                             prefixIcon: Icon(Icons.person),
                             labelText: 'Email',
@@ -74,6 +75,7 @@ class LoginScreen extends StatelessWidget {
                         ),
                         SizedBox(height: size.height * 0.02),
                         TextFormField(
+                          controller: controller.password,
                           decoration: InputDecoration(
                             prefixIcon: Icon(Icons.fingerprint),
                             labelText: 'Password',
