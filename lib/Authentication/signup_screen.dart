@@ -64,19 +64,20 @@ class _SignupScreenState extends State<SignupScreen> {
                           decoration: InputDecoration(
                             prefixIcon: Icon(Icons.person_outline_outlined),
                             labelText: 'Full Name',
-                            hintText: 'Name',
+                            fillColor: Colors.grey.shade100,
+                            filled: true,
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20),
-                              borderSide:
-                                  BorderSide(color: Colors.grey, width: 1),
+                              borderRadius: BorderRadius.circular(30),
+                              borderSide: BorderSide(
+                                  color: Colors.grey.shade300, width: 1),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20),
-                              borderSide:
-                                  BorderSide(color: Colors.grey, width: 1.8),
+                              borderRadius: BorderRadius.circular(30),
+                              borderSide: BorderSide(
+                                  color: Colors.grey.shade300, width: 1.8),
                             ),
                           ),
                         ),
@@ -88,19 +89,20 @@ class _SignupScreenState extends State<SignupScreen> {
                           decoration: InputDecoration(
                             prefixIcon: Icon(Icons.mail_outline),
                             labelText: 'Email',
-                            hintText: 'Email ID',
+                            fillColor: Colors.grey.shade100,
+                            filled: true,
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20),
-                              borderSide:
-                                  BorderSide(color: Colors.grey, width: 1),
+                              borderRadius: BorderRadius.circular(30),
+                              borderSide: BorderSide(
+                                  color: Colors.grey.shade300, width: 1),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20),
-                              borderSide:
-                                  BorderSide(color: Colors.grey, width: 1.8),
+                              borderRadius: BorderRadius.circular(30),
+                              borderSide: BorderSide(
+                                  color: Colors.grey.shade300, width: 1.8),
                             ),
                           ),
                         ),
@@ -112,19 +114,20 @@ class _SignupScreenState extends State<SignupScreen> {
                           decoration: InputDecoration(
                             prefixIcon: Icon(Icons.fingerprint_outlined),
                             labelText: 'Password',
-                            hintText: 'Password',
+                            fillColor: Colors.grey.shade100,
+                            filled: true,
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20),
-                              borderSide:
-                                  BorderSide(color: Colors.grey, width: 1),
+                              borderRadius: BorderRadius.circular(30),
+                              borderSide: BorderSide(
+                                  color: Colors.grey.shade300, width: 1),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20),
-                              borderSide:
-                                  BorderSide(color: Colors.grey, width: 1.8),
+                              borderRadius: BorderRadius.circular(30),
+                              borderSide: BorderSide(
+                                  color: Colors.grey.shade300, width: 1.8),
                             ),
                           ),
                         ),
@@ -133,7 +136,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   ),
                 ),
                 SizedBox(
-                  height: size.height * 0.05,
+                  height: size.height * 0.02,
                 ),
                 GestureDetector(
                   onTap: () {
@@ -144,18 +147,23 @@ class _SignupScreenState extends State<SignupScreen> {
                       );
                     }
                   },
-                  child: Container(
-                    height: 60,
-                    width: 150,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(width: 1, color: Colors.grey)),
-                    child: Center(
-                      child: Text(
-                        'SignUp',
-                        style: GoogleFonts.poppins(
-                            fontSize: 25, fontWeight: FontWeight.w500),
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 8, left: 8),
+                    child: Container(
+                      height: 60,
+                      width: size.width * 1,
+                      decoration: BoxDecoration(
+                          color: Colors.black,
+                          borderRadius: BorderRadius.circular(30),
+                          border: Border.all(width: 1, color: Colors.grey)),
+                      child: Center(
+                        child: Text(
+                          'SignUp',
+                          style: GoogleFonts.poppins(
+                              fontSize: 25,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white),
+                        ),
                       ),
                     ),
                   ),
