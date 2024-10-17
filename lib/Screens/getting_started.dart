@@ -28,9 +28,11 @@ class GettingStarted extends StatelessWidget {
                       TextSpan(
                         text: 'Knowing\n',
                         style: GoogleFonts.poppins(
-                            fontSize: 60,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black),
+                          fontSize: 60,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black,
+                          height: 1.1, // Reduced line height for the first line
+                        ),
                       ),
                       WidgetSpan(
                           child: SizedBox(
@@ -39,14 +41,24 @@ class GettingStarted extends StatelessWidget {
                       TextSpan(
                         text: 'What You \nAre Eating',
                         style: GoogleFonts.poppins(
-                            fontSize: 60,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.grey),
+                          fontSize: 60,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.grey.shade400,
+                          height: 1.1, // Reduced line height for the first line
+                        ),
                       ),
                     ]),
                   ),
                   SizedBox(
-                    height: size.height * 0.03,
+                    height: size.height * 0.02,
+                  ),
+                  Text(
+                    'Lorem ipsum odor amet, consectetuer adipiscing elit. Tempus tortor dictum euismod',
+                    style: GoogleFonts.poppins(
+                        fontSize: 15, color: Colors.grey.shade500),
+                  ),
+                  SizedBox(
+                    height: size.height * 0.05,
                   ),
                   GestureDetector(
                     onTap: () => Get.to(() => const LoginScreen()),
@@ -54,7 +66,7 @@ class GettingStarted extends StatelessWidget {
                       height: 60,
                       width: size.width * 1,
                       decoration: BoxDecoration(
-                          color: Colors.blueGrey,
+                          color: Colors.blueAccent,
                           borderRadius: BorderRadius.circular(30),
                           border: Border.all(width: 1, color: Colors.grey)),
                       child: Center(
