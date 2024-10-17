@@ -15,21 +15,30 @@ class GettingStarted extends StatelessWidget {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.only(right: 15.0, left: 15.0),
           child: Container(
             padding: const EdgeInsets.all(10),
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Text(
+                    'Knowing',
+                    style: GoogleFonts.poppins(
+                        fontSize: 60, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: size.height * 0.03,
+                  ),
                   GestureDetector(
                     onTap: () => Get.to(() => const LoginScreen()),
                     child: Container(
                       height: 60,
                       width: size.width * 1,
                       decoration: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.blueGrey,
+                          borderRadius: BorderRadius.circular(30),
                           border: Border.all(width: 1, color: Colors.grey)),
                       child: Center(
                         child: Padding(
