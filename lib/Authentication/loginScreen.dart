@@ -56,7 +56,6 @@ class LoginScreen extends StatelessWidget {
                           decoration: InputDecoration(
                             prefixIcon: Icon(Icons.person),
                             labelText: 'Email',
-
                             fillColor: Colors.grey.shade100,
                             filled: true, // Enable filling the background
                             border: OutlineInputBorder(
