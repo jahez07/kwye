@@ -101,7 +101,14 @@ class LoginScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(height: size.height * 0.04),
+                        TextButton(
+                            onPressed: () {},
+                            child: Text(
+                              'Forgot Password',
+                              style: GoogleFonts.poppins(
+                                  fontSize: 13, color: Colors.black),
+                            )),
+                        SizedBox(height: size.height * 0.01),
 
                         // LOGIN BUTTON
                         GestureDetector(
@@ -120,9 +127,9 @@ class LoginScreen extends StatelessWidget {
                           },
                           child: Container(
                             height: 60,
-                            width: 150,
+                            width: size.width * 1,
                             decoration: BoxDecoration(
-                                color: Colors.white,
+                                color: Colors.black,
                                 borderRadius: BorderRadius.circular(30),
                                 border:
                                     Border.all(width: 1, color: Colors.grey)),
@@ -130,7 +137,9 @@ class LoginScreen extends StatelessWidget {
                               child: Text(
                                 'Login',
                                 style: GoogleFonts.poppins(
-                                    fontSize: 25, fontWeight: FontWeight.w500),
+                                    fontSize: 25,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.white),
                               ),
                             ),
                           ),
