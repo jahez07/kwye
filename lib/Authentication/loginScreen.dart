@@ -6,7 +6,6 @@ import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kwye/Authentication/signup_screen.dart';
 import 'package:kwye/Controllers/signup_controller.dart';
-import 'package:kwye/Screens/choices.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
