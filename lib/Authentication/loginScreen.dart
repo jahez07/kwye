@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_instance/get_instance.dart';
 import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kwye/Authentication/otp_screen.dart';
 import 'package:kwye/Authentication/signup_screen.dart';
 import 'package:kwye/Controllers/signup_controller.dart';
 
@@ -101,7 +102,7 @@ class LoginScreen extends StatelessWidget {
                           ),
                         ),
                         TextButton(
-                            onPressed: () {},
+                            onPressed: () => Get.to(() => OtpScreen()),
                             child: Text(
                               'Forgot Password',
                               style: GoogleFonts.poppins(
