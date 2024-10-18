@@ -39,7 +39,7 @@ class MailVerification extends StatelessWidget {
               ),
               const SizedBox(height: 30),
               Text(
-                lorem.tr,
+                emailVerification.tr,
                 style: GoogleFonts.poppins(fontSize: 15),
                 textAlign: TextAlign.center,
               ),
@@ -53,12 +53,12 @@ class MailVerification extends StatelessWidget {
                 fontSize: 20,
               ),
               SizedBox(
-                height: 30 * 3,
+                height: 30 * 2.2,
               ),
               TextButton(
                 onPressed: () => controller.sendEmailVerification,
                 child: Text(
-                  'Resend Verification Emial',
+                  'Resend E-Mail Link',
                   style: GoogleFonts.poppins(
                       fontSize: 15, color: Colors.blue.shade800),
                 ),
