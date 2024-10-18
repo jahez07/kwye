@@ -1,3 +1,5 @@
+// ignore_for_file: empty_catches, unused_catch_clause
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:kwye/Authentication/loginScreen.dart';
@@ -35,11 +37,11 @@ class AuthenticationRepository extends GetxController {
           : Get.offAll(() => const ChoicesScreen());
     } on FirebaseAuthException catch (e) {
       final ex = SignupEmailPasswordFailure.code(e.code);
-      print('FIREBASE AUTH EXCEPTION -  ${ex.message}');
+      //print('FIREBASE AUTH EXCEPTION -  ${ex.message}');
       throw ex;
     } catch (_) {
       const ex = SignupEmailPasswordFailure();
-      print('EXCEPTION - ${ex.message}');
+      //print('EXCEPTION - ${ex.message}');
       throw ex;
     }
   }
@@ -50,6 +52,10 @@ class AuthenticationRepository extends GetxController {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
     } on FirebaseAuthException catch (e) {
     } catch (_) {}
+  }
+
+  Future<void> sendEmailVerification() async {
+    _auth.currentUser?.sendEmailVerification();
   }
 
   Future<void> logout() async => await _auth.signOut();
