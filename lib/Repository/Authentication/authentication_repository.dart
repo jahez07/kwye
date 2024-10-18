@@ -2,7 +2,6 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-import 'package:kwye/Authentication/loginScreen.dart';
 import 'package:kwye/Repository/Authentication/exception/signup_email_password_failure.dart';
 import 'package:kwye/Screens/choices.dart';
 import 'package:kwye/Screens/getting_started.dart';
@@ -55,7 +54,7 @@ class AuthenticationRepository extends GetxController {
   }
 
   Future<void> sendEmailVerification() async {
-    _auth.currentUser?.sendEmailVerification();
+    await _auth.currentUser?.sendEmailVerification();
   }
 
   Future<void> logout() async => await _auth.signOut();
