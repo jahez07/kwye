@@ -78,6 +78,7 @@ class _ChoicesScreenState extends State<ChoicesScreen> {
                   width: 10,
                 ),
                 GestureDetector(
+                  onTap: () {},
                   child: Container(
                     padding: const EdgeInsets.all(15),
                     decoration: BoxDecoration(

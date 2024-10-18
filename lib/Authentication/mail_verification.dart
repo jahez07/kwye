@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kwye/Constants/text_strings.dart';
 import 'package:kwye/Controllers/mail_verification_controller.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
@@ -35,8 +36,7 @@ class MailVerification extends StatelessWidget {
               ),
               const SizedBox(height: 30),
               Text(
-                'Lorem ipsum odor amet, consectetuer adipiscing elit. Nullam urna at orci facilisi turpis sagittis mattis.'
-                    .tr,
+                lorem.tr,
                 style: GoogleFonts.poppins(fontSize: 15),
                 textAlign: TextAlign.center,
               )
