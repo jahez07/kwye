@@ -14,5 +14,5 @@ class MailVerificationController extends GetxController {
 
   void setTimerForAutoRedirect() {}
 
-  void manuallyCheckEmailVerification() {}
+  void manuallyCheckEmailVerificationStatus() {}
 }

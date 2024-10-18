@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class CustomButton extends StatelessWidget {
   final String text;
   final VoidCallback onTap;
+  final double width;
   final Color? backgroundColor;
   final Color? borderColor;
   final Color? textColor;
@@ -12,6 +13,7 @@ class CustomButton extends StatelessWidget {
     super.key,
     required this.text,
     required this.onTap,
+    required this.width,
     this.backgroundColor,
     this.borderColor,
     this.textColor,
@@ -23,20 +25,23 @@ class CustomButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        width: width,
         padding: const EdgeInsets.all(15),
         decoration: BoxDecoration(
-          color: backgroundColor ?? Colors.grey.shade100,
-          borderRadius: BorderRadius.circular(15),
+          color: backgroundColor ?? Colors.black,
+          borderRadius: BorderRadius.circular(30),
           border: Border.all(
             width: 1,
             color: borderColor ?? Colors.grey.shade300,
           ),
         ),
-        child: Text(
-          text,
-          style: TextStyle(
-            fontSize: fontSize ?? 20,
-            color: textColor ?? Colors.black,
+        child: Center(
+          child: Text(
+            text,
+            style: TextStyle(
+              fontSize: fontSize ?? 25,
+              color: textColor ?? Colors.white,
+            ),
           ),
         ),
       ),

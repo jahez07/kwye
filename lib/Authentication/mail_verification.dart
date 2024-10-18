@@ -5,6 +5,8 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kwye/Constants/text_strings.dart';
 import 'package:kwye/Controllers/mail_verification_controller.dart';
+import 'package:kwye/Repository/Authentication/authentication_repository.dart';
+import 'package:kwye/utils/custom_button.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
 class MailVerification extends StatelessWidget {
@@ -39,7 +41,43 @@ class MailVerification extends StatelessWidget {
                 lorem.tr,
                 style: GoogleFonts.poppins(fontSize: 15),
                 textAlign: TextAlign.center,
-              )
+              ),
+              SizedBox(
+                height: 30 * 2,
+              ),
+              CustomButton(
+                text: 'Continue',
+                onTap: () => controller.manuallyCheckEmailVerificationStatus(),
+                width: 200,
+                fontSize: 20,
+              ),
+              SizedBox(
+                height: 30 * 3,
+              ),
+              TextButton(
+                onPressed: () => controller.sendEmailVerification,
+                child: Text(
+                  'Resend Verification Emial',
+                  style: GoogleFonts.poppins(
+                      fontSize: 15, color: Colors.blue.shade800),
+                ),
+              ),
+              TextButton(
+                  onPressed: () => AuthenticationRepository.instance.logout(),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Icon(LineAwesomeIcons.long_arrow_alt_left_solid),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      Text(
+                        'back to login',
+                        style: GoogleFonts.poppins(
+                            fontSize: 15, color: Colors.blue.shade800),
+                      )
+                    ],
+                  ))
             ],
           ),
         ),
