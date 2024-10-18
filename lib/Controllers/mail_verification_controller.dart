@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:kwye/Repository/Authentication/authentication_repository.dart';
 
 class MailVerificationController extends GetxController {
   @override
@@ -7,7 +8,9 @@ class MailVerificationController extends GetxController {
     sendEmailVerification();
   }
 
-  void sendEmailVerification() {}
+  Future<void> sendEmailVerification() async {
+    await AuthenticationRepository.instance.sendEmailVerification();
+  }
 
   void setTimerForAutoRedirect() {}
 
