@@ -43,9 +43,9 @@ class OtpScreen extends StatelessWidget {
                   numberOfFields: 6,
                   fillColor: Colors.black.withOpacity(0.1),
                   filled: true,
-                  cursorColor: Colors.yellow,
+                  cursorColor: Colors.black,
                   borderColor: Colors.black,
-                  focusedBorderColor: Colors.green,
+                  focusedBorderColor: Colors.black12,
                   showFieldAsBox: true,
                   onSubmit: (code) {
                     //print('OTP is $code');
