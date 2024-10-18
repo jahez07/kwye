@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:kwye/Controllers/mail_verification_controller.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
 class MailVerification extends StatelessWidget {
@@ -9,6 +11,7 @@ class MailVerification extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //final size = MediaQuery.of(context).size;
+    final controller = Get.put(MailVerificationController());
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -24,6 +27,7 @@ class MailVerification extends StatelessWidget {
               const SizedBox(
                 height: 30 * 2,
               ),
+              Text(''),
             ],
           ),
         ),
