@@ -17,6 +17,7 @@ class MailVerification extends StatelessWidget {
     //final size = MediaQuery.of(context).size;
     final controller = Get.put(MailVerificationController());
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(
@@ -43,12 +44,12 @@ class MailVerification extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               SizedBox(
-                height: 30 * 2,
+                height: 30 * 1.5,
               ),
               CustomButton(
                 text: 'Continue',
                 onTap: () => controller.manuallyCheckEmailVerificationStatus(),
-                width: 200,
+                width: 150,
                 fontSize: 20,
               ),
               SizedBox(
@@ -67,10 +68,6 @@ class MailVerification extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Icon(LineAwesomeIcons.long_arrow_alt_left_solid),
-                      const SizedBox(
-                        width: 5,
-                      ),
                       Text(
                         'back to login',
                         style: GoogleFonts.poppins(
