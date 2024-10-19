@@ -1,30 +1,28 @@
-// ignore_for_file: prefer_const_constructors
-
-class SignupEmailPasswordFailure {
+class SignUpWithEmailAndPasswordFailure {
   final String message;
 
-  const SignupEmailPasswordFailure(
-      [this.message = "An unknown error occurred"]);
+  const SignUpWithEmailAndPasswordFailure(
+      [this.message = "An Unknown error occured"]);
 
-  factory SignupEmailPasswordFailure.code(String code) {
+  factory SignUpWithEmailAndPasswordFailure.code(String code) {
     switch (code) {
       case 'weak-password':
-        return const SignupEmailPasswordFailure(
+        return const SignUpWithEmailAndPasswordFailure(
             'Please enter a stronger password');
       case 'invalid-email':
-        return const SignupEmailPasswordFailure(
+        return const SignUpWithEmailAndPasswordFailure(
             'Email is not valid or badly formatted');
       case 'email-already-in-use':
-        return const SignupEmailPasswordFailure(
+        return const SignUpWithEmailAndPasswordFailure(
             'An account already exists for that email');
       case 'operation-not-allowed':
-        return const SignupEmailPasswordFailure(
+        return const SignUpWithEmailAndPasswordFailure(
             'Operation is not allowed, Please contact admin');
       case 'user-disabled':
-        return const SignupEmailPasswordFailure(
+        return const SignUpWithEmailAndPasswordFailure(
             'This user has been disabled, Please contact admin');
       default:
-        return const SignupEmailPasswordFailure();
+        return const SignUpWithEmailAndPasswordFailure();
     }
   }
 }

@@ -143,8 +143,8 @@ class _SignupScreenState extends State<SignupScreen> {
                   onTap: () {
                     if (_formKey.currentState!.validate()) {
                       SignupController.instance.registerUser(
-                        controller.fullName.text.trim(),
                         controller.email.text.trim(),
+                        controller.password.text.trim(),
                       );
                     }
                   },

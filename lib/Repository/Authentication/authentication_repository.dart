@@ -25,28 +25,16 @@ class AuthenticationRepository extends GetxController {
   _setInitialScreen(User? user) {
     user == null
         ? Get.offAll(() => const GettingStarted())
-        : user.emailVerified
-            ? Get.offAll(() => const ChoicesScreen())
-            : Get.offAll(() => const MailVerification());
+        : Get.offAll(() => const ChoicesScreen());
   }
 
   Future<void> createUserWithEmailandPassword(
       String email, String password) async {
-    try {
-      await _auth.createUserWithEmailAndPassword(
-          email: email, password: password);
-      firebaseUser.value != null
-          ? Get.offAll(() => const GettingStarted())
-          : Get.offAll(() => const ChoicesScreen());
-    } on FirebaseAuthException catch (e) {
-      final ex = SignupEmailPasswordFailure.code(e.code);
-      //print('FIREBASE AUTH EXCEPTION -  ${ex.message}');
-      throw ex;
-    } catch (_) {
-      const ex = SignupEmailPasswordFailure();
-      //print('EXCEPTION - ${ex.message}');
-      throw ex;
-    }
+    await _auth.createUserWithEmailAndPassword(
+        email: email, password: password);
+    firebaseUser.value != null
+        ? Get.offAll(() => const ChoicesScreen())
+        : Get.offAll(() => const GettingStarted());
   }
 
   Future<void> loginUserWithEmailandPassword(
