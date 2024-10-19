@@ -1,11 +1,14 @@
 // ignore_for_file: non_constant_identifier_names, unused_element
 
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:kwye/Repository/Authentication/authentication_repository.dart';
+import 'package:kwye/utils/custom_button.dart';
+import 'package:http/http.dart' as http;
 
 class ChoicesScreen extends StatefulWidget {
   const ChoicesScreen({super.key});
@@ -17,6 +20,7 @@ class ChoicesScreen extends StatefulWidget {
 class _ChoicesScreenState extends State<ChoicesScreen> {
   File? _imageFile;
   String _extractedText = '';
+  late var apiData = "";
 
   Future<void> _pickImage() async {
     final pickedFile =
@@ -39,6 +43,20 @@ class _ChoicesScreenState extends State<ChoicesScreen> {
     });
   }
 
+  Future<void> backendApiCall() async {
+    final backendUrl = Uri.parse('http://127.0.0.1:8000/');
+    try {
+      final responseData = await http.get(backendUrl);
+
+      if (responseData.statusCode == 200) {
+        final apiResponse = json.decode(responseData.body);
+        setState(() {
+          apiData = apiResponse.toString();
+        });
+      }
+    } catch (execption) {}
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -56,43 +74,30 @@ class _ChoicesScreenState extends State<ChoicesScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                GestureDetector(
-                  onTap: _pickImage,
-                  child: Container(
-                    padding: const EdgeInsets.all(15),
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade100,
-                      borderRadius: BorderRadius.circular(15),
-                      border: Border.all(width: 1, color: Colors.grey.shade300),
-                    ),
-                    child: const Text(
-                      'Packed Food',
-                      style: TextStyle(fontSize: 20),
-                    ),
+            Padding(
+              padding: const EdgeInsets.only(right: 10, left: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CustomButton(
+                    text: 'Scan Barcode',
+                    onTap: _pickImage,
+                    width: size.width * 0.4,
+                    fontSize: 20,
                   ),
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                GestureDetector(
-                  onTap: () {},
-                  child: Container(
-                    padding: const EdgeInsets.all(15),
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade100,
-                      borderRadius: BorderRadius.circular(15),
-                      border: Border.all(width: 1, color: Colors.grey.shade300),
-                    ),
-                    child: const Text(
-                      'Cooked Food',
-                      style: TextStyle(fontSize: 20),
-                    ),
+                  const SizedBox(
+                    width: 10,
                   ),
-                ),
-              ],
+                  CustomButton(
+                    text: 'Cooked',
+                    onTap: () {
+                      backendApiCall();
+                    },
+                    width: size.width * 0.3,
+                    fontSize: 20,
+                  )
+                ],
+              ),
             ),
             SizedBox(
               height: size.height * 0.02,
@@ -107,7 +112,7 @@ class _ChoicesScreenState extends State<ChoicesScreen> {
               ),
               padding: const EdgeInsets.all(10),
               child: SingleChildScrollView(
-                child: Text(_extractedText),
+                child: Center(child: Text(apiData)),
               ),
             ),
             SizedBox(

@@ -4,4 +4,4 @@ app = FastAPI()
 
 @app.get("/")
 def index():
-    return {"name":"First Data"}
+    return {"Food":"Chicken Biriyani"}
