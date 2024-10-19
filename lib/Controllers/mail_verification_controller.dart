@@ -24,7 +24,7 @@ class MailVerificationController extends GetxController {
       final user = FirebaseAuth.instance.currentUser;
       if (user!.emailVerified) {
         timer.cancel();
-        AuthenticationRepository.instance.setInitialScreen(user);
+        //AuthenticationRepository.instance.setInitialScreen(user);
       }
     });
   }
