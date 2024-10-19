@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kwye/Authentication/loginScreen.dart';
+import 'package:kwye/utils/custom_button.dart';
 
 class GettingStarted extends StatelessWidget {
   const GettingStarted({super.key});
@@ -73,29 +74,10 @@ class GettingStarted extends StatelessWidget {
                     SizedBox(
                       height: size.height * 0.05,
                     ),
-                    GestureDetector(
-                      onTap: () => Get.to(() => const LoginScreen()),
-                      child: Container(
-                        height: 60,
-                        width: size.width * 1,
-                        decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius: BorderRadius.circular(30),
-                            border: Border.all(width: 1, color: Colors.grey)),
-                        child: Center(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              'Get Started',
-                              style: GoogleFonts.poppins(
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.white),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
+                    CustomButton(
+                        text: 'Get Started',
+                        onTap: () => Get.to(() => const LoginScreen()),
+                        width: size.width * 1)
                   ],
                 ),
               ),

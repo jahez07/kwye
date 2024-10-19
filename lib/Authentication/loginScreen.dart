@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get_instance/get_instance.dart';
 import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:kwye/Authentication/mail_verification.dart';
 import 'package:kwye/Authentication/otp_screen.dart';
 import 'package:kwye/Authentication/signup_screen.dart';
 import 'package:kwye/Controllers/signup_controller.dart';
+import 'package:kwye/utils/custom_button.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -103,7 +103,7 @@ class LoginScreen extends StatelessWidget {
                           ),
                         ),
                         TextButton(
-                            onPressed: () => Get.to(() => MailVerification()),
+                            onPressed: () => Get.to(() => OtpScreen()),
                             child: Text(
                               'Forgot Password',
                               style: GoogleFonts.poppins(
@@ -112,39 +112,23 @@ class LoginScreen extends StatelessWidget {
                         SizedBox(height: size.height * 0.01),
 
                         // LOGIN BUTTON
-                        GestureDetector(
-                          onTap: () {
-                            if (_formKey.currentState!.validate()) {
-                              SignupController.instance.loginUser(
-                                  controller.email.text.trim(),
-                                  controller.password.text.trim());
-                              Scaffold(
-                                body: SnackBar(
-                                  content: Text('Login Successful'),
-                                  backgroundColor: Colors.green,
-                                ),
-                              );
-                            }
-                          },
-                          child: Container(
-                            height: 60,
-                            width: size.width * 1,
-                            decoration: BoxDecoration(
-                                color: Colors.black,
-                                borderRadius: BorderRadius.circular(30),
-                                border:
-                                    Border.all(width: 1, color: Colors.grey)),
-                            child: Center(
-                              child: Text(
-                                'Login',
-                                style: GoogleFonts.poppins(
-                                    fontSize: 25,
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.white),
-                              ),
-                            ),
-                          ),
-                        ),
+
+                        CustomButton(
+                            text: 'Login',
+                            onTap: () {
+                              if (_formKey.currentState!.validate()) {
+                                SignupController.instance.loginUser(
+                                    controller.email.text.trim(),
+                                    controller.password.text.trim());
+                                Scaffold(
+                                  body: SnackBar(
+                                    content: Text('Login Successful'),
+                                    backgroundColor: Colors.green,
+                                  ),
+                                );
+                              }
+                            },
+                            width: size.width * 1),
                         SizedBox(height: size.height * 0.03),
                         TextButton(
                           onPressed: () => Get.to(() => SignupScreen()),
