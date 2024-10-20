@@ -206,6 +206,8 @@ class _SignupScreenState extends State<SignupScreen> {
                           height: size.height * 0.02,
                         ),
 
+                        // C O U N T R Y  +  S T A T E  +  C I T Y  P I C K E R
+
                         // P A S S W O R D
                         TextFormField(
                           controller: controller.password,
