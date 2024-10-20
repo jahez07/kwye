@@ -55,6 +55,19 @@ class LoginScreen extends StatelessWidget {
                       children: [
                         TextFormField(
                           controller: controller.email,
+                          validator: (value) {
+                            String pattern =
+                                r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+                            RegExp regex = RegExp(pattern);
+                            if (value!.isEmpty) {
+                              return "Name is Required";
+                            } else if (!regex.hasMatch(value)) {
+                              return "Enter correct Emial";
+                            } else {
+                              return null;
+                            }
+                          },
+                          keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
                             prefixIcon: Icon(Icons.person),
                             labelText: 'Email',
@@ -78,6 +91,7 @@ class LoginScreen extends StatelessWidget {
                         SizedBox(height: size.height * 0.02),
                         TextFormField(
                           controller: controller.password,
+                          obscureText: true,
                           decoration: InputDecoration(
                             prefixIcon: Icon(Icons.fingerprint),
                             labelText: 'Password',
