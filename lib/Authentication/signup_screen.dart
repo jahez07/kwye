@@ -62,6 +62,17 @@ class _SignupScreenState extends State<SignupScreen> {
                       children: [
                         TextFormField(
                           controller: controller.fullName,
+                          validator: (value) {
+                            String pattern = r'(^[a-zA-Z ]*$)';
+                            RegExp regExp = RegExp(pattern);
+                            if (value!.isEmpty) {
+                              return "Name is Required";
+                            } else if (!regExp.hasMatch(value)) {
+                              return "Please correct your name";
+                            } else {
+                              return null;
+                            }
+                          },
                           decoration: InputDecoration(
                             prefixIcon: Icon(Icons.person_outline_outlined),
                             labelText: 'Full Name',
@@ -87,6 +98,19 @@ class _SignupScreenState extends State<SignupScreen> {
                         ),
                         TextFormField(
                           controller: controller.email,
+                          validator: (value) {
+                            String pattern =
+                                r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+                            RegExp regex = RegExp(pattern);
+                            if (value!.isEmpty) {
+                              return "Name is Required";
+                            } else if (!regex.hasMatch(value)) {
+                              return "Enter correct Emial";
+                            } else {
+                              return null;
+                            }
+                          },
+                          keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
                             prefixIcon: Icon(Icons.mail_outline),
                             labelText: 'Email',
@@ -112,6 +136,15 @@ class _SignupScreenState extends State<SignupScreen> {
                         ),
                         TextFormField(
                           controller: controller.password,
+                          obscureText: true,
+                          keyboardType: TextInputType.number,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Password is Required";
+                            } else {
+                              return null;
+                            }
+                          },
                           decoration: InputDecoration(
                             prefixIcon: Icon(Icons.fingerprint_outlined),
                             labelText: 'Password',
