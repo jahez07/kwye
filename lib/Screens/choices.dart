@@ -102,6 +102,7 @@ class _ChoicesScreenState extends State<ChoicesScreen> {
             SizedBox(
               height: size.height * 0.02,
             ),
+            // A P I  D A T A
             Container(
               width: size.width * 0.7,
               height: size.height * 0.2,
@@ -113,6 +114,20 @@ class _ChoicesScreenState extends State<ChoicesScreen> {
               padding: const EdgeInsets.all(10),
               child: SingleChildScrollView(
                 child: Center(child: Text(apiData)),
+              ),
+            ),
+            // O C R  O U T P U T
+            Container(
+              width: size.width * 0.7,
+              height: size.height * 0.2,
+              decoration: BoxDecoration(
+                color: Colors.grey.shade100,
+                border: Border.all(width: 1, color: Colors.grey.shade400),
+                borderRadius: BorderRadius.circular(15),
+              ),
+              padding: const EdgeInsets.all(10),
+              child: SingleChildScrollView(
+                child: Center(child: Text(_extractedText)),
               ),
             ),
             SizedBox(
