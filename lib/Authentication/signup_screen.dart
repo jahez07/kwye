@@ -60,6 +60,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     padding: EdgeInsets.all(12),
                     child: Column(
                       children: [
+                        // F U L L  N A M E
                         TextFormField(
                           controller: controller.fullName,
                           validator: (value) {
@@ -130,6 +131,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         SizedBox(
                           height: size.height * 0.02,
                         ),
+
                         // E M A I L  I D
                         TextFormField(
                           controller: controller.email,
@@ -203,6 +205,8 @@ class _SignupScreenState extends State<SignupScreen> {
                         SizedBox(
                           height: size.height * 0.02,
                         ),
+
+                        // P A S S W O R D
                         TextFormField(
                           controller: controller.password,
                           obscureText: true,
