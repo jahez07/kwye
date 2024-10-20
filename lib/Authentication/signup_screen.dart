@@ -83,7 +83,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                   ),
                                 );
                               });
-                              return "Enter Name";
+                              return "";
                             } else if (!regExp.hasMatch(value)) {
                               WidgetsBinding.instance.addPostFrameCallback((_) {
                                 ScaffoldMessenger.of(context).showSnackBar(
@@ -102,7 +102,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                   ),
                                 );
                               });
-                              return "Enter correct Name";
+                              return "";
                             } else {
                               return null;
                             }
@@ -155,7 +155,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                   ),
                                 );
                               });
-                              return "Enter Email";
+                              return "";
                             } else if (!regex.hasMatch(value)) {
                               WidgetsBinding.instance.addPostFrameCallback((_) {
                                 ScaffoldMessenger.of(context).showSnackBar(
@@ -174,7 +174,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                   ),
                                 );
                               });
-                              return "Enter Correct Email";
+                              return "";
                             } else {
                               return null;
                             }
@@ -226,7 +226,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                   ),
                                 );
                               });
-                              return "Password is required";
+                              return "";
                             } else {
                               return null;
                             }
