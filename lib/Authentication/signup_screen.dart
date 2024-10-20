@@ -96,6 +96,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         SizedBox(
                           height: size.height * 0.02,
                         ),
+                        // E M A I L  I D
                         TextFormField(
                           controller: controller.email,
                           validator: (value) {

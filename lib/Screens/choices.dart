@@ -105,7 +105,7 @@ class _ChoicesScreenState extends State<ChoicesScreen> {
             // A P I  D A T A
             Container(
               width: size.width * 0.7,
-              height: size.height * 0.2,
+              height: size.height * 0.13,
               decoration: BoxDecoration(
                 color: Colors.grey.shade100,
                 border: Border.all(width: 1, color: Colors.grey.shade400),
@@ -116,6 +116,10 @@ class _ChoicesScreenState extends State<ChoicesScreen> {
                 child: Center(child: Text(apiData)),
               ),
             ),
+            SizedBox(
+              height: size.height * 0.015,
+            ),
+
             // O C R  O U T P U T
             Container(
               width: size.width * 0.7,
