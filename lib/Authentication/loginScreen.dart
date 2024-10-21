@@ -129,6 +129,30 @@ class LoginScreen extends StatelessWidget {
                         TextFormField(
                           controller: controller.password,
                           obscureText: true,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              WidgetsBinding.instance.addPostFrameCallback((_) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text('Password is required'),
+                                    backgroundColor: Colors.redAccent,
+                                    behavior: SnackBarBehavior.floating,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    action: SnackBarAction(
+                                      label: 'OK',
+                                      textColor: Colors.white,
+                                      onPressed: () {},
+                                    ),
+                                  ),
+                                );
+                              });
+                              return "";
+                            } else {
+                              return null;
+                            }
+                          },
                           decoration: InputDecoration(
                             prefixIcon: Icon(Icons.fingerprint),
                             labelText: 'Password',
@@ -201,7 +225,7 @@ class LoginScreen extends StatelessWidget {
                             child: Text(
                               'Forgot Password',
                               style: GoogleFonts.poppins(
-                                  fontSize: 15, color: Colors.blue),
+                                  fontSize: 14, color: Colors.blue),
                             )),
                       ],
                     ),
