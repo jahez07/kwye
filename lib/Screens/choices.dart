@@ -57,6 +57,11 @@ class _ChoicesScreenState extends State<ChoicesScreen> {
     } catch (execption) {}
   }
 
+  void _nutrientData() {
+    showModalBottomSheet(
+        context: context, builder: (ctx) => Text('data skdhvbswkhv wlivwb'));
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -104,7 +109,7 @@ class _ChoicesScreenState extends State<ChoicesScreen> {
             ),
             CustomButton(
               text: 'Nutrient Info',
-              onTap: () {},
+              onTap: _nutrientData,
               width: size.width * 0.73,
               fontSize: 20,
             ),

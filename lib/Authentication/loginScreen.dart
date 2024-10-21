@@ -129,51 +129,6 @@ class LoginScreen extends StatelessWidget {
                         TextFormField(
                           controller: controller.password,
                           obscureText: true,
-                          validator: (value) {
-                            String pattern = r'(^[a-zA-Z ]*$)';
-                            RegExp regExp = RegExp(pattern);
-                            if (value!.isEmpty) {
-                              WidgetsBinding.instance.addPostFrameCallback((_) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text('Name is required'),
-                                    backgroundColor: Colors.redAccent,
-                                    behavior: SnackBarBehavior.floating,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10),
-                                    ),
-                                    action: SnackBarAction(
-                                      label: 'OK',
-                                      textColor: Colors.white,
-                                      onPressed: () {},
-                                    ),
-                                  ),
-                                );
-                              });
-                              return "Password is required";
-                            } else if (!regExp.hasMatch(value)) {
-                              WidgetsBinding.instance.addPostFrameCallback((_) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text('Enter correct Name'),
-                                    backgroundColor: Colors.redAccent,
-                                    behavior: SnackBarBehavior.floating,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10),
-                                    ),
-                                    action: SnackBarAction(
-                                      label: 'OK',
-                                      textColor: Colors.white,
-                                      onPressed: () {},
-                                    ),
-                                  ),
-                                );
-                              });
-                              return "Password is required";
-                            } else {
-                              return null;
-                            }
-                          },
                           decoration: InputDecoration(
                             prefixIcon: Icon(Icons.fingerprint),
                             labelText: 'Password',
@@ -198,14 +153,8 @@ class LoginScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        TextButton(
-                            onPressed: () => Get.to(() => OtpScreen()),
-                            child: Text(
-                              'Forgot Password',
-                              style: GoogleFonts.poppins(
-                                  fontSize: 13, color: Colors.black),
-                            )),
-                        SizedBox(height: size.height * 0.01),
+
+                        SizedBox(height: size.height * 0.03),
 
                         // LOGIN BUTTON
 
@@ -244,7 +193,16 @@ class LoginScreen extends StatelessWidget {
                                           color: Colors.blue))
                                 ]),
                           ),
-                        )
+                        ),
+                        TextButton(
+                            onPressed: () => Get.to(
+                                  () => OtpScreen(),
+                                ),
+                            child: Text(
+                              'Forgot Password',
+                              style: GoogleFonts.poppins(
+                                  fontSize: 15, color: Colors.blue),
+                            )),
                       ],
                     ),
                   ),
