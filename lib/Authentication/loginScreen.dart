@@ -77,8 +77,7 @@ class LoginScreen extends StatelessWidget {
                                   ),
                                 );
                               });
-
-                              return "Name is Required";
+                              return "Email is Required";
                             } else if (!regex.hasMatch(value)) {
                               WidgetsBinding.instance.addPostFrameCallback((_) {
                                 ScaffoldMessenger.of(context).showSnackBar(
@@ -130,6 +129,51 @@ class LoginScreen extends StatelessWidget {
                         TextFormField(
                           controller: controller.password,
                           obscureText: true,
+                          validator: (value) {
+                            String pattern = r'(^[a-zA-Z ]*$)';
+                            RegExp regExp = RegExp(pattern);
+                            if (value!.isEmpty) {
+                              WidgetsBinding.instance.addPostFrameCallback((_) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text('Name is required'),
+                                    backgroundColor: Colors.redAccent,
+                                    behavior: SnackBarBehavior.floating,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    action: SnackBarAction(
+                                      label: 'OK',
+                                      textColor: Colors.white,
+                                      onPressed: () {},
+                                    ),
+                                  ),
+                                );
+                              });
+                              return "Password is required";
+                            } else if (!regExp.hasMatch(value)) {
+                              WidgetsBinding.instance.addPostFrameCallback((_) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text('Enter correct Name'),
+                                    backgroundColor: Colors.redAccent,
+                                    behavior: SnackBarBehavior.floating,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    action: SnackBarAction(
+                                      label: 'OK',
+                                      textColor: Colors.white,
+                                      onPressed: () {},
+                                    ),
+                                  ),
+                                );
+                              });
+                              return "Password is required";
+                            } else {
+                              return null;
+                            }
+                          },
                           decoration: InputDecoration(
                             prefixIcon: Icon(Icons.fingerprint),
                             labelText: 'Password',
