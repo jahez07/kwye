@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, no_leading_underscores_for_local_identifiers
 
+import 'package:csc_picker/csc_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
@@ -207,7 +208,22 @@ class _SignupScreenState extends State<SignupScreen> {
                         ),
 
                         // C O U N T R Y  +  S T A T E  +  C I T Y  P I C K E R
-
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: SizedBox(
+                            width: size.height * 1,
+                            child: CSCPicker(
+                              //layout: Layout.vertical,
+                              flagState: CountryFlag.ENABLE,
+                              onCountryChanged: (country) {},
+                              onStateChanged: (state) {},
+                              onCityChanged: (city) {},
+                              // placeholders for dropdown search field
+                              countrySearchPlaceholder: "Country",
+                              stateSearchPlaceholder: "State",
+                            ),
+                          ),
+                        ),
                         // P A S S W O R D
                         TextFormField(
                           controller: controller.password,
