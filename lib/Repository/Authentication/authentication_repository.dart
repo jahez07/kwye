@@ -2,6 +2,7 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
+import 'package:kwye/Repository/Authentication/exception/firebaseAuth_exceptions.dart';
 import 'package:kwye/Screens/choices.dart';
 import 'package:kwye/Screens/getting_started.dart';
 
@@ -26,6 +27,8 @@ class AuthenticationRepository extends GetxController {
         : Get.offAll(() => const ChoicesScreen());
   }
 
+  /* ------------ Email & Password SignIn ----------------*/
+
   Future<void> createUserWithEmailandPassword(
       String email, String password) async {
     await _auth.createUserWithEmailAndPassword(
@@ -48,4 +51,14 @@ class AuthenticationRepository extends GetxController {
   }
 
   Future<void> logout() async => await _auth.signOut();
+
+  Future<void> sendPasswordResetEmail(String email) async {
+    try {
+      await _auth.sendPasswordResetEmail(email: email);
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong';
+    }
+  }
 }
