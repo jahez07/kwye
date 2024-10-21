@@ -208,21 +208,39 @@ class _SignupScreenState extends State<SignupScreen> {
                         ),
 
                         // C O U N T R Y  +  S T A T E  +  C I T Y  P I C K E R
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: SizedBox(
-                            width: size.height * 1,
-                            child: CSCPicker(
-                              //layout: Layout.vertical,
-                              flagState: CountryFlag.ENABLE,
-                              onCountryChanged: (country) {},
-                              onStateChanged: (state) {},
-                              onCityChanged: (city) {},
-                              // placeholders for dropdown search field
-                              countrySearchPlaceholder: "Country",
-                              stateSearchPlaceholder: "State",
+                        SizedBox(
+                          width: size.width * 1,
+                          child: CSCPicker(
+                            //layout: Layout.vertical,
+                            flagState: CountryFlag.ENABLE,
+                            onCountryChanged: (country) {},
+                            onStateChanged: (state) {},
+                            onCityChanged: (city) {},
+                            // placeholders for dropdown search field
+                            countrySearchPlaceholder: "Country",
+                            stateSearchPlaceholder: "State",
+                            citySearchPlaceholder: "City",
+
+                            // label for dropdown
+                            countryDropdownLabel: "Select Country",
+                            stateDropdownLabel: "Select State",
+                            cityDropdownLabel: "Select City",
+                            dropdownDialogRadius: 15.0,
+                            searchBarRadius: 30,
+                            dropdownDecoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Colors.grey.shade100,
+                              border: Border.all(color: Colors.grey.shade300),
+                            ),
+                            disabledDropdownDecoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Colors.grey.shade100,
+                              border: Border.all(color: Colors.grey.shade300),
                             ),
                           ),
+                        ),
+                        SizedBox(
+                          height: size.height * 0.02,
                         ),
                         // P A S S W O R D
                         TextFormField(
