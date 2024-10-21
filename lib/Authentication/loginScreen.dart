@@ -60,8 +60,44 @@ class LoginScreen extends StatelessWidget {
                                 r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
                             RegExp regex = RegExp(pattern);
                             if (value!.isEmpty) {
+                              WidgetsBinding.instance.addPostFrameCallback((_) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text('Email is required'),
+                                    backgroundColor: Colors.redAccent,
+                                    behavior: SnackBarBehavior.floating,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    action: SnackBarAction(
+                                      label: 'OK',
+                                      textColor: Colors.white,
+                                      onPressed: () {},
+                                    ),
+                                  ),
+                                );
+                              });
+
                               return "Name is Required";
                             } else if (!regex.hasMatch(value)) {
+                              WidgetsBinding.instance.addPostFrameCallback((_) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text('Enter correct email'),
+                                    backgroundColor: Colors.redAccent,
+                                    behavior: SnackBarBehavior.floating,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    action: SnackBarAction(
+                                      label: 'OK',
+                                      textColor: Colors.white,
+                                      onPressed: () {},
+                                    ),
+                                  ),
+                                );
+                              });
+
                               return "Enter correct Emial";
                             } else {
                               return null;
