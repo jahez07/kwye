@@ -209,71 +209,7 @@ class _SignupScreenState extends State<SignupScreen> {
                             ),
                           ),
                         ),
-                        SizedBox(
-                          height: size.height * 0.02,
-                        ),
 
-                        // C O U N T R Y  +  S T A T E  +  C I T Y  P I C K E R
-                        SizedBox(
-                          width: size.width * 1,
-                          child: CSCPicker(
-                            //layout: Layout.vertical,
-                            flagState: CountryFlag.ENABLE,
-                            onCountryChanged: (country) {
-                              setState(() {
-                                countryValue = country;
-                              });
-                            },
-                            onStateChanged: (state) {
-                              setState(() {
-                                stateValue = state;
-                              });
-                            },
-                            onCityChanged: (city) {
-                              setState(() {
-                                cityValue = city;
-                              });
-                            },
-                            // placeholders for dropdown search field
-                            countrySearchPlaceholder: "Country",
-                            stateSearchPlaceholder: "State",
-                            citySearchPlaceholder: "City",
-
-                            // label for dropdown
-                            countryDropdownLabel: " Country",
-                            stateDropdownLabel: " State",
-                            cityDropdownLabel: " City",
-                            dropdownDialogRadius: 15.0,
-                            searchBarRadius: 30,
-
-                            // Add these new properties:
-                            selectedItemStyle: TextStyle(
-                              color: Colors.black,
-                              fontSize: 15,
-                            ),
-                            dropdownHeadingStyle: TextStyle(
-                              color: Colors.black,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                            ),
-                            dropdownItemStyle: TextStyle(
-                              color: Colors.black,
-                              fontSize: 15,
-                            ),
-                            dropdownDecoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              color: Colors.grey.shade100,
-                              border: Border.all(
-                                  color: Colors.grey.shade300, width: 1),
-                            ),
-                            disabledDropdownDecoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              color: Colors.grey.shade100,
-                              border: Border.all(
-                                  color: Colors.grey.shade300, width: 1),
-                            ),
-                          ),
-                        ),
                         SizedBox(
                           height: size.height * 0.02,
                         ),
@@ -323,6 +259,73 @@ class _SignupScreenState extends State<SignupScreen> {
                               borderRadius: BorderRadius.circular(30),
                               borderSide: BorderSide(
                                   color: Colors.grey.shade300, width: 1.8),
+                            ),
+                          ),
+                        ),
+
+                        SizedBox(
+                          height: size.height * 0.02,
+                        ),
+
+                        // C O U N T R Y  +  S T A T E  +  C I T Y  P I C K E R
+
+                        SizedBox(
+                          width: size.width * 1,
+                          child: CSCPicker(
+                            //layout: Layout.vertical,
+                            flagState: CountryFlag.DISABLE,
+                            onCountryChanged: (country) {
+                              setState(() {
+                                //countryValue = country;
+                              });
+                            },
+                            onStateChanged: (state) {
+                              setState(() {
+                                stateValue = state;
+                              });
+                            },
+                            onCityChanged: (city) {
+                              setState(() {
+                                cityValue = city;
+                              });
+                            },
+                            // placeholders for dropdown search field
+                            countrySearchPlaceholder: "Country",
+                            stateSearchPlaceholder: "State",
+                            citySearchPlaceholder: "City",
+
+                            // label for dropdown
+                            countryDropdownLabel: " Country",
+                            stateDropdownLabel: " State",
+                            cityDropdownLabel: " City",
+                            dropdownDialogRadius: 15.0,
+                            searchBarRadius: 30,
+
+                            // Add these new properties:
+                            selectedItemStyle: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                            ),
+                            dropdownHeadingStyle: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            dropdownItemStyle: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                            ),
+                            dropdownDecoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Colors.grey.shade100,
+                              border: Border.all(
+                                  color: Colors.grey.shade300, width: 1),
+                            ),
+                            disabledDropdownDecoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Colors.grey.shade100,
+                              border: Border.all(
+                                  color: Colors.grey.shade300, width: 1),
                             ),
                           ),
                         ),
