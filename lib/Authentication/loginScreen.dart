@@ -125,6 +125,8 @@ class LoginScreen extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: size.height * 0.02),
+
+                        // P A S S W O R D
                         TextFormField(
                           controller: controller.password,
                           obscureText: true,
