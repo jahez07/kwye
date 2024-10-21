@@ -20,6 +20,12 @@ class _SignupScreenState extends State<SignupScreen> {
     final size = MediaQuery.of(context).size;
     final controller = Get.put(SignupController());
     final _formKey = GlobalKey<FormState>();
+
+    /// Variables to store country state city data in onChanged method.
+    String countryValue = "";
+    String stateValue = "";
+    String cityValue = "";
+    String address = "";
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
@@ -222,11 +228,26 @@ class _SignupScreenState extends State<SignupScreen> {
                             citySearchPlaceholder: "City",
 
                             // label for dropdown
-                            countryDropdownLabel: "Select Country",
-                            stateDropdownLabel: "Select State",
-                            cityDropdownLabel: "Select City",
+                            countryDropdownLabel: " Country",
+                            stateDropdownLabel: " State",
+                            cityDropdownLabel: " City",
                             dropdownDialogRadius: 15.0,
                             searchBarRadius: 30,
+
+                            // Add these new properties:
+                            selectedItemStyle: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                            ),
+                            dropdownHeadingStyle: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            dropdownItemStyle: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                            ),
                             dropdownDecoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
                               color: Colors.grey.shade100,
