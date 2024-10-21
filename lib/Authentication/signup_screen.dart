@@ -274,19 +274,19 @@ class _SignupScreenState extends State<SignupScreen> {
                           child: CSCPicker(
                             //layout: Layout.vertical,
                             flagState: CountryFlag.DISABLE,
-                            onCountryChanged: (country) {
+                            onCountryChanged: (value) {
                               setState(() {
-                                //countryValue = country;
+                                countryValue = value;
                               });
                             },
-                            onStateChanged: (state) {
+                            onStateChanged: (value) {
                               setState(() {
-                                stateValue = state;
+                                stateValue = value;
                               });
                             },
-                            onCityChanged: (city) {
+                            onCityChanged: (value) {
                               setState(() {
-                                cityValue = city;
+                                cityValue = value;
                               });
                             },
                             // placeholders for dropdown search field
