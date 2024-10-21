@@ -23,8 +23,8 @@ class _SignupScreenState extends State<SignupScreen> {
 
     /// Variables to store country state city data in onChanged method.
     String countryValue = "";
-    String stateValue = "";
-    String cityValue = "";
+    String? stateValue = "";
+    String? cityValue = "";
     String address = "";
     return Scaffold(
       appBar: AppBar(
@@ -219,9 +219,21 @@ class _SignupScreenState extends State<SignupScreen> {
                           child: CSCPicker(
                             //layout: Layout.vertical,
                             flagState: CountryFlag.ENABLE,
-                            onCountryChanged: (country) {},
-                            onStateChanged: (state) {},
-                            onCityChanged: (city) {},
+                            onCountryChanged: (country) {
+                              setState(() {
+                                countryValue = country;
+                              });
+                            },
+                            onStateChanged: (state) {
+                              setState(() {
+                                stateValue = state;
+                              });
+                            },
+                            onCityChanged: (city) {
+                              setState(() {
+                                cityValue = city;
+                              });
+                            },
                             // placeholders for dropdown search field
                             countrySearchPlaceholder: "Country",
                             stateSearchPlaceholder: "State",
@@ -251,12 +263,14 @@ class _SignupScreenState extends State<SignupScreen> {
                             dropdownDecoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
                               color: Colors.grey.shade100,
-                              border: Border.all(color: Colors.grey.shade300),
+                              border: Border.all(
+                                  color: Colors.grey.shade300, width: 1),
                             ),
                             disabledDropdownDecoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
                               color: Colors.grey.shade100,
-                              border: Border.all(color: Colors.grey.shade300),
+                              border: Border.all(
+                                  color: Colors.grey.shade300, width: 1),
                             ),
                           ),
                         ),
@@ -326,6 +340,9 @@ class _SignupScreenState extends State<SignupScreen> {
                         controller.email.text.trim(),
                         controller.password.text.trim(),
                       );
+                      setState(() {
+                        address = "$cityValue, $stateValue, $countryValue";
+                      });
                     }
                   },
                   child: Padding(
