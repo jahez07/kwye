@@ -100,6 +100,15 @@ class _ChoicesScreenState extends State<ChoicesScreen> {
               ),
             ),
             SizedBox(
+              height: size.height * 0.01,
+            ),
+            CustomButton(
+              text: 'Nutrient Info',
+              onTap: () {},
+              width: size.width * 0.73,
+              fontSize: 20,
+            ),
+            SizedBox(
               height: size.height * 0.02,
             ),
             // A P I  D A T A
