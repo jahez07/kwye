@@ -177,34 +177,41 @@ class _DraggableSheetState extends State<DraggableSheet> {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (builder, constraints) {
       return DraggableScrollableSheet(
+          key: sheet,
+          initialChildSize: 0.5,
+          maxChildSize: 0.95, // 1 being the whole screen
+          minChildSize: 0,
+          expand: true,
+          snap: true,
+          snapSizes: [60 / constraints.maxHeight, 0.5],
           builder: (BuildContext context, ScrollController scrollController) {
-        return DecoratedBox(
-          decoration: const BoxDecoration(
-            color: Colors.white,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.yellow,
-                blurRadius: 10,
-                spreadRadius: 1,
-                offset: Offset(0, 1),
+            return DecoratedBox(
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.yellow,
+                    blurRadius: 10,
+                    spreadRadius: 1,
+                    offset: Offset(0, 1),
+                  ),
+                ],
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(22),
+                  topRight: Radius.circular(22),
+                ),
               ),
-            ],
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(22),
-              topRight: Radius.circular(22),
-            ),
-          ),
-          child: CustomScrollView(
-            controller: scrollController,
-            slivers: [
-              //topButtonIndicator(),
-              SliverToBoxAdapter(
-                child: widget.child,
+              child: CustomScrollView(
+                controller: scrollController,
+                slivers: [
+                  //topButtonIndicator(),
+                  SliverToBoxAdapter(
+                    child: widget.child,
+                  ),
+                ],
               ),
-            ],
-          ),
-        );
-      });
+            );
+          });
     });
   }
 }
